@@ -1,0 +1,184 @@
+
+:root {
+    --primary-color: rgba(51, 120, 82, 0.36);
+    --secondary-color: rgba(58, 69, 96, 0.53);
+    --background-color: radial-gradient(circle, #dbeaff, #c1c1c1, #a3adbf);
+    --text-color: #4e3c3c;
+    --border-radius: 50px;
+    --transition-speed: 0.3s;
+}
+#plotCanvas {
+    width: 500px;
+    display: block;
+    margin: 0 auto; /* Centers the canvas horizontally */
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* Пример использования селектора атрибутов */
+input[type="text"] {
+    border: 2px solid var(--primary-color);
+    padding: 2%; /* Задаем отступ в процентах */
+    border-radius: var(--border-radius);
+}
+
+/* Пример использования селектора дочерних элементов */
+.container-wrapper > .container {
+    background: linear-gradient(135deg, rgba(27, 67, 67, 0.22), rgba(85, 48, 48, 0.22)); /* Сложный градиент */
+    color: white; /* Устанавливаем цвет текста для примера */
+}
+
+/* Использование псевдоэлемента ::before */
+.container1::before {
+    display: block;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Псевдокласс для элемента в фокусе */
+.input-field input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+
+
+/* Унаследованное свойство (цвет фона текста наследуется от body) */
+#header {
+    background-color: var(--primary-color);
+    color: inherit; /* Наследование от родителя */
+    text-align: center;
+    padding: 2% 0; /* Задаем отступ в процентах */
+    font-size: 24px;
+    font-weight: 500;
+    font-family: serif;
+    margin-bottom: 1px;
+}
+
+/* Обертка для контейнеров */
+.container-wrapper {
+    display: flex;
+    margin-top: -2%;
+    justify-content: space-between; /* Размещает контейнеры по сторонам */
+    align-items: flex-start; /* Выравнивает контейнеры по верхнему краю */
+    width: 99%; /* Занимает всю ширину родителя */
+    padding: 4%; /* Добавляем отступ в процентах */
+    box-sizing: border-box; /* Учитывает padding и border */
+}
+
+/* Контейнер справа */
+.container {
+    width: 60%;
+    padding: 1%; /* Задаем отступ в процентах */
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgba(27, 23, 23, 0.1);
+    box-sizing: border-box;
+    overflow: hidden; /* Убираем возможные переполнения */
+    position: relative;
+}
+
+/* Контейнер слева */
+.container1 {
+    width: 36%;
+    padding: 3%; /* Задаем отступ в процентах */
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgb(27, 23, 23);
+    box-sizing: border-box;
+    overflow: hidden; /* Убираем возможные переполнения */
+    position: relative;
+}
+
+.input-field {
+    margin-bottom: 2%; /* Задаем отступ в процентах */
+}
+
+.input-field label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 2%; /* Задаем отступ в процентах */
+}
+
+.input-field input {
+    width: 80%;
+    padding: 1%; /* Задаем отступ в процентах */
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    transition: border-color var(--transition-speed);
+    box-sizing: border-box; /* Учитывает padding и border в ширине */
+}
+
+input[type="number"] {
+    border: 2px solid #ccc;
+    padding: 1%; /* Задаем отступ в процентах */
+}
+
+/* Кнопка с плавным изменением фона при наведении */
+button {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    margin-top: 5%;
+    padding: 5%; /* Задаем отступ в процентах */
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+x-button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+
+}
+button:hover {
+    background-color: #568c6a;
+}
+
+/* Таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 10px rgba(225, 37, 37, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
+
+#error-message {
+    margin-top: 2%; /* Задаем отступ в процентах */
+    font-size: 14px;
+}

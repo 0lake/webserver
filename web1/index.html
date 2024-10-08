@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastCGI Server Point Checker</title>
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="header">
+    Student Name: Садовников Олег Юрьевич |
+    Group:  P3225 |
+    Variant: 409500
+</div>
+<div class="container-wrapper">
+    <div class="container1">
+        <form id="pointForm" method="POST">
+            <div class="input-field">
+                <label>X Coordinate:</label>
+                <div id="x-buttons">
+                    <input type="button" value="-2" onclick="setX(-2)">
+                    <input type="button" value="-1.5" onclick="setX(-1.5)">
+                    <input type="button" value="-1" onclick="setX(-1)">
+                    <input type="button" value="-0.5" onclick="setX(-0.5)">
+                    <input type="button" value="0" onclick="setX(0)">
+                    <input type="button" value="0.5" onclick="setX(0.5)">
+                    <input type="button" value="1" onclick="setX(1)">
+                    <input type="button" value="1.5" onclick="setX(1.5)">
+                    <input type="button" value="2" onclick="setX(2)">
+                </div>
+                <input type="hidden" id="x" name="x" required>
+            </div>
+            <div class="input-field">
+                <label for="y">Y Coordinate:</label>
+                <input type="text" id="y" name="y" min="-3" max="3" required>
+            </div>
+            <div class="input-field">
+                <label for="r">R Value (1-4):</label>
+                <input type="text" id="r" name="r" min="1" max="5" required>
+            </div>
+            <button type="button" onclick="sendData()">Check</button>
+            <div id="error-message" style="color: #ff0073; display: none;">Error: Invalid input</div>
+        </form>
+    </div>
+    <div class="container">
+        <canvas id="plotCanvas"></canvas>
+    </div>
+</div>
+<script src="scripts.js"></script>
+</body>
+</html>
